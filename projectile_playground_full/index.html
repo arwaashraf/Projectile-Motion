@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Physics Playground: Projectile Motion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Physics Playground: Projectile Motion (Angry Birds Style)</h1>
+    </header>
+    <div class="wrap">
+      <div class="panel controls">
+        <h2>Launcher</h2>
+        <div class="row">
+          <label for="angle">Angle (°)</label>
+          <input id="angle" type="range" min="5" max="85" step="1" value="45" />
+          <span id="angleVal" class="badge">45°</span>
+        </div>
+        <div class="row">
+          <label for="power">Power</label>
+          <input
+            id="power"
+            type="range"
+            min="200"
+            max="1200"
+            step="10"
+            value="700"
+          />
+          <span id="powerVal" class="badge">700</span>
+        </div>
+        <div class="row">
+          <label for="gravity">Gravity</label>
+          <input
+            id="gravity"
+            type="range"
+            min="400"
+            max="1600"
+            step="20"
+            value="980"
+          />
+          <span id="gravityVal" class="badge">980</span>
+        </div>
+        <div class="row toggle">
+          <input id="wind" type="checkbox" />
+          <label for="wind">Wind (random per shot)</label>
+        </div>
+        <div class="row toggle">
+          <input id="moving" type="checkbox" />
+          <label for="moving">One moving target</label>
+        </div>
+        <div class="row toggle">
+          <input id="obst" type="checkbox" />
+          <label for="obst">Obstacles</label>
+        </div>
+        <div class="btns">
+          <button id="launch">Launch (Space)</button>
+          <button id="reset">Reset</button>
+          <button id="next">Next Level</button>
+          <button id="clearHS">Clear High Score</button>
+        </div>
+
+        <div class="legend">
+          <span><span class="dot path"></span> Path</span>
+          <span><span class="dot pred"></span> Predicted</span>
+          <span><span class="dot target"></span> Targets</span>
+          <span><span class="dot obst"></span> Obstacles</span>
+        </div>
+
+        <div class="grid">
+          <div class="stat">
+            <h3>Score</h3>
+            <div class="v" id="score">0</div>
+          </div>
+          <div class="stat">
+            <h3>High Score</h3>
+            <div class="v" id="high">0</div>
+          </div>
+          <div class="stat">
+            <h3>Shots</h3>
+            <div class="v" id="shots">0</div>
+          </div>
+          <div class="stat">
+            <h3>Wind ax</h3>
+            <div class="v" id="windax">0</div>
+          </div>
+        </div>
+
+        <p class="hint">
+          Controls: drag on canvas to aim, release to shoot — or use sliders +
+          <b>Launch</b>. Touch is supported. Predicted trajectory updates as you
+          aim.
+        </p>
+      </div>
+
+      <div class="panel">
+        <canvas id="game"></canvas>
+      </div>
+    </div>
+    <script src="js/game.js"></script>
+  </body>
+</html>
